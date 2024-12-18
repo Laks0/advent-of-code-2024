@@ -1,0 +1,19 @@
+2 4 1 5 7 5 1 6 0 3 4 0 5 5 3 0 
+0: bst a
+2: bxl 5
+4: cdv b
+6: bxl 6
+8: adv 3
+10: bxc 0
+12: out b
+14: jnz 0
+
+while (a != 0) {
+	b = a % 8;
+	b = b ^ b101;
+	c = a >> b;
+	b = b ^ b110;
+	a = a >> 3; // log_2(a) * 3 <= len(programa)
+	b = b ^ c;
+	print(b);
+}
